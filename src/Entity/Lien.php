@@ -23,6 +23,9 @@ class Lien
     #[ORM\Column(type: Types::TEXT)]
     private ?string $lien_desc = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $lien_image = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -60,6 +63,18 @@ class Lien
     public function setLienDesc(string $lien_desc): static
     {
         $this->lien_desc = $lien_desc;
+
+        return $this;
+    }
+
+    public function getLienImage(): ?string
+    {
+        return $this->lien_image;
+    }
+
+    public function setLienImage(?string $lien_image): static
+    {
+        $this->lien_image = $lien_image;
 
         return $this;
     }
