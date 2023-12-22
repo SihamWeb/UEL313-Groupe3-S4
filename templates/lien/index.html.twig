@@ -36,6 +36,7 @@
         {% endfor %}
         </tbody>
     </table>
+    {{ knp_pagination_render(pagination) }}
 
     <a href="{{ path('app_lien_new') }}">Create new</a>
 {% endblock %}
