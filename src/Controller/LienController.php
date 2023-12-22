@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Lien;
-use App\Form\LienType;
+use App\Form\Lien1Type;
 use App\Repository\LienRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -26,7 +26,7 @@ class LienController extends AbstractController
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
         $lien = new Lien();
-        $form = $this->createForm(LienType::class, $lien);
+        $form = $this->createForm(Lien1Type::class, $lien);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -53,7 +53,7 @@ class LienController extends AbstractController
     #[Route('/{id}/edit', name: 'app_lien_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Lien $lien, EntityManagerInterface $entityManager): Response
     {
-        $form = $this->createForm(LienType::class, $lien);
+        $form = $this->createForm(Lien1Type::class, $lien);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
