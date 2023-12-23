@@ -2,23 +2,34 @@
 
 namespace App\Controller;
 
-use App\Entity\Lien;
-use App\Form\LienType;
 use App\Repository\LienRepository;
-use Doctrine\ORM\EntityManagerInterface;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+#use Doctrine\ORM\Tools\Pagination\Paginator;
+
+use App\Entity\Lien;
+use App\Form\Lien1Type;
+use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\HttpFoundation\Request;
+
+
 
 #[Route('/lien')]
 class LienController extends AbstractController
 {
     #[Route('/', name: 'app_lien_index', methods: ['GET'])]
-    public function index(LienRepository $lienRepository): Response
+    public function index(LienRepository $lienRepository, Request $request, PaginatorInterface $paginator): Response
     {
+    
+    $pagination = $paginator->paginate(
+    	$lienRepository->paginationQuery(), 
+    	$request->query->get('page', 1), 1
+     );
+    
         return $this->render('lien/index.html.twig', [
-            'liens' => $lienRepository->findAll(),
+            'pagination' => $pagination
         ]);
     }
 
@@ -26,7 +37,7 @@ class LienController extends AbstractController
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
         $lien = new Lien();
-        $form = $this->createForm(LienType::class, $lien);
+        $form = $this->createForm(Lien1Type::class, $lien);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -53,7 +64,7 @@ class LienController extends AbstractController
     #[Route('/{id}/edit', name: 'app_lien_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Lien $lien, EntityManagerInterface $entityManager): Response
     {
-        $form = $this->createForm(LienType::class, $lien);
+        $form = $this->createForm(Lien1Type::class, $lien);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

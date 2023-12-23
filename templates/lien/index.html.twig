@@ -17,7 +17,7 @@
             </tr>
         </thead>
         <tbody>
-        {% for lien in liens %}
+        {% for lien in pagination %}
             <tr>
                 <td>{{ lien.id }}</td>
                 <td>{{ lien.lienUrl }}</td>
@@ -36,6 +36,7 @@
         {% endfor %}
         </tbody>
     </table>
+    {{ knp_pagination_render(pagination) }}
 
     <a href="{{ path('app_lien_new') }}">Create new</a>
 {% endblock %}
