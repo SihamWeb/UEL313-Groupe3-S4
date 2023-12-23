@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\LienRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -25,6 +27,14 @@ class Lien
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $lien_image = null;
+
+    #[ORM\ManyToMany(targetEntity: Tag::class, inversedBy: 'liens')]
+    private Collection $tag_id;
+
+    public function __construct()
+    {
+        $this->tag_id = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -75,6 +85,30 @@ class Lien
     public function setLienImage(?string $lien_image): static
     {
         $this->lien_image = $lien_image;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Tag>
+     */
+    public function getTagId(): Collection
+    {
+        return $this->tag_id;
+    }
+
+    public function addTagId(Tag $tagId): static
+    {
+        if (!$this->tag_id->contains($tagId)) {
+            $this->tag_id->add($tagId);
+        }
+
+        return $this;
+    }
+
+    public function removeTagId(Tag $tagId): static
+    {
+        $this->tag_id->removeElement($tagId);
 
         return $this;
     }
