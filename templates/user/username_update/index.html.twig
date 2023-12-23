@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier "{{ app.user.userIdentifier }}"{% endblock %}
+
+{% block body %}
+    <h1>Modifier "{{ app.user.userIdentifier }}"</h1>
+
+    {% for flashMessage in app.flashes('success') %}
+        {{ flashMessage }}
+    {% endfor %}
+
+    {% set successMessages = app.session.flashbag.get('success') %}
+
+    {{ form_start(usernameUpdateForm) }}
+        {{ form_row(usernameUpdateForm.newUsername) }}
+        {{ form_row(usernameUpdateForm.confirmNewUsername) }}
+        {{ form_row(usernameUpdateForm.save) }}
+    {{ form_end(usernameUpdateForm) }}
+{% endblock %}
