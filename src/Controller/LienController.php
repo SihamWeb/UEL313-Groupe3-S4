@@ -2,23 +2,34 @@
 
 namespace App\Controller;
 
-use App\Entity\Lien;
-use App\Form\Lien1Type;
 use App\Repository\LienRepository;
-use Doctrine\ORM\EntityManagerInterface;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+#use Doctrine\ORM\Tools\Pagination\Paginator;
+
+use App\Entity\Lien;
+use App\Form\Lien1Type;
+use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\HttpFoundation\Request;
+
+
 
 #[Route('/lien')]
 class LienController extends AbstractController
 {
     #[Route('/', name: 'app_lien_index', methods: ['GET'])]
-    public function index(LienRepository $lienRepository): Response
+    public function index(LienRepository $lienRepository, Request $request, PaginatorInterface $paginator): Response
     {
+    
+    $pagination = $paginator->paginate(
+    	$lienRepository->paginationQuery(), 
+    	$request->query->get('page', 1), 1
+     );
+    
         return $this->render('lien/index.html.twig', [
-            'liens' => $lienRepository->findAll(),
+            'pagination' => $pagination
         ]);
     }
 
