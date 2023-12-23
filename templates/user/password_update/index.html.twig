@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier password de "{{ app.user.userIdentifier }}"{% endblock %}
+
+{% block body %}
+    <h1>Modifier password de "{{ app.user.userIdentifier }}"</h1>
+
+    {% for flashMessage in app.flashes('success') %}
+        {{ flashMessage }}
+    {% endfor %}
+
+    {% set successMessages = app.session.flashbag.get('success') %}
+
+    {{ form_start(passwordUpdateForm) }}
+        {{ form_row(passwordUpdateForm.newPassword) }}
+        {{ form_row(passwordUpdateForm.save) }}
+    {{ form_end(passwordUpdateForm) }}
+{% endblock %}

@@ -1,41 +1,42 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}User index{% endblock %}
+{% block title %}Mon compte, {{ app.user.userIdentifier | capitalize }}{% endblock %}
 
 {% block body %}
-    <h1>User index</h1>
+    <h1>Bienvenue, {{ app.user.userIdentifier | capitalize }}</h1>
 
-    <table class="table">
+    <h2>Votre profil, {{ app.user.userIdentifier | capitalize }}</h2>
+    
+    <table>
         <thead>
             <tr>
-                <th>Id</th>
-                <th>User_name</th>
-                <th>User_password</th>
-                <th>User_salt</th>
-                <th>User_role</th>
-                <th>actions</th>
+                <th scope="col">Paramètres</th>
+                <th scope="col">Valeur</th>
+                <th scope="col">Action</th>
             </tr>
         </thead>
         <tbody>
-        {% for user in users %}
             <tr>
-                <td>{{ user.id }}</td>
-                <td>{{ user.userName }}</td>
-                <td>{{ user.userPassword }}</td>
-                <td>{{ user.userSalt }}</td>
-                <td>{{ user.userRole }}</td>
+                <th scope="col">Username</th>
+                <td>{{ app.user.userIdentifier }}</td>
                 <td>
-                    <a href="{{ path('app_user_show', {'id': user.id}) }}">show</a>
-                    <a href="{{ path('app_user_edit', {'id': user.id}) }}">edit</a>
+                    <a href="{{ path('app_username_update') }}">Modifier</a>
                 </td>
             </tr>
-        {% else %}
             <tr>
-                <td colspan="6">no records found</td>
+                <th scope="col">Mot de passe</th>
+                <td>*****</td>
+                <td>
+                    <a href="{{ path('app_password_update') }}">Modifier</a>
+                </td>
             </tr>
-        {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('app_user_new') }}">Create new</a>
+    <form method="post" action="{{ path('app_user_delete', {'id': app.user.id}) }}" onsubmit="return confirm('Etes-vous certain de supprimer votre compte ?');">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ app.user.id) }}">
+        <button>Supprimer mon compte</button>
+    </form>
+    
 {% endblock %}
