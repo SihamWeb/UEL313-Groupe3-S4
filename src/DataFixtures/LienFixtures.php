@@ -180,7 +180,7 @@ class LienFixtures extends Fixture
         $manager -> persist($lien);
 
 	    	$lien = new Lien();
-        $lien -> setLienUrl("https://www.postman.com/");
+        $lien -> setLienUrl("https://www.https://validator.w3.org/.net/manual/fr/index.php");
         $lien -> setLienTitre("Validator w3");
         $lien -> setLienDesc("Le Markup Validation Service est un validateur du World Wide Web Consortium qui permet aux utilisateurs Internet de vérifier les documents HTML et XHTML pré-HTML5 pour un balisage bien formé par rapport à une définition de type de document.");
         $lien -> setLienImage("");
