@@ -11,7 +11,8 @@
         {{ include('lien/_form.html.twig', {'button_label': 'Modifier'}) }}
 
         <div class="d-flex justify-content-center mt-4">
-            <a href="{{ path('app_lien_index') }}" class="btn btn-outline btn-login me-3">Retourner à la liste</a>
             {{ include('lien/_delete_form.html.twig') }}
         </div>
+    </div>
+</div> 
 {% endblock %}

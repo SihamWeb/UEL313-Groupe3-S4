@@ -23,6 +23,7 @@
     </div>
 
     <div class="d-flex justify-content-center mt-4">
-        <button class="btn btn-block btn-signup">{{ button_label|default('Save') }}</button>
+        <button class="btn btn-block btn-signup me-3">{{ button_label|default('Save') }}</button>
+        <a href="{{ path('app_lien_index') }}" class="btn btn-outline btn-login">Retourner à la liste</a>
     </div>
 {{ form_end(form) }}
