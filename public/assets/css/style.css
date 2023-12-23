@@ -83,6 +83,7 @@ button#btn-submit {
     color: #ffffff;
 }
 
+
 .btn.btn-block.btn-signup:hover {
     background-color: #e4802c;
 }
@@ -138,6 +139,7 @@ h1 {
 .btn-action:not(:disabled):not(.disabled) {
     cursor: pointer;
 }
+
 
 .btn-sm {
     padding: 0.25rem 0.5rem;

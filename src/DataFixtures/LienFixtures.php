@@ -17,7 +17,7 @@ class LienFixtures extends Fixture
         $lien -> setLienUrl("https://google.com");
         $lien -> setLienTitre("Google");
         $lien -> setLienDesc("Google est une entreprise américaine de services technologiques fondée en 1998 dans la Silicon Valley, en Californie, par Larry Page et Sergey Brin, créateurs du moteur de recherche Google. C'est une filiale de la société Alphabet depuis août 2015.");
-	$lien -> setLienImage("https://www.webrankinfo.com/dossiers/wp-content/uploads/google-logo-carre-2015-09-400.png") ;
+	      $lien -> setLienImage("https://www.webrankinfo.com/dossiers/wp-content/uploads/google-logo-carre-2015-09-400.png") ;
         $manager -> persist($lien);
 
 	    
