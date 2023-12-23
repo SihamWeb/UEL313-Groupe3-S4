@@ -17,7 +17,8 @@ class LienFixtures extends Fixture
         $lien -> setLienUrl("https://google.com");
         $lien -> setLienTitre("Google");
         $lien -> setLienDesc("Moteur de recherche");
-	$lien -> setLienImage("https://www.meosis.fr/wp-content/uploads/elementor/thumbs/nouveau-logo-google-ous5r5ngyxz73d54tkv9iztdczrxhqe6bcqwq373ig.png") ;
+	    $lien -> setLienImage("https://www.meosis.fr/wp-content/uploads/elementor/thumbs/nouveau-logo-google-ous5r5ngyxz73d54tkv9iztdczrxhqe6bcqwq373ig.png");
+
         $manager -> persist($lien);
 
         $lien = new Lien();
