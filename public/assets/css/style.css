@@ -4,12 +4,16 @@
     #3a3a3a (gris clair)
 */
 
+.important {
+    color: #e4802c;
+}
+
 .custom-font-color {
     color: #4e4e4e;
 }
 
 img#logo {
-    height: 50px;
+    height: 75px;
 }
 
 nav {
@@ -36,10 +40,10 @@ button#btn-submit {
 }
 
 .menu {
-    flex: 0 0 33%;
+    flex: 0 0 40%;
 }
 
-.menu[:last-child]{
+.menu.search{
     flex: 0 0 20%;
 }
 
@@ -64,6 +68,7 @@ button#btn-submit {
 
 .btn.btn-outline.btn-login:hover {
     border: 1px solid transparent;
+    color: #e4802c;
 }
 
 h1 {
