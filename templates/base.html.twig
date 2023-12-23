@@ -20,7 +20,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <div class="menu">
                         <ul class="navbar-nav" id="navbar">
-                            <li class="nav-item dropdown">
+                            <li class="nav-item dropdown me-3">
                                 <a class="nav-link dropdown-toggle fs-5 custom-font-color" id="navbarDropdown" role="button"
                                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Liens
@@ -34,7 +34,7 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle fs-5 custom-font-color" id="navbarDropdown" role="button"
                                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Mon compte
+                                    Bienvenue, {{ app.user.userIdentifier | capitalize }}
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item custom-font-color" href="{{path('app_logout')}}">Se déconnecter</a>
@@ -69,11 +69,20 @@
             </div>
         </nav>
         <div class="container-fluid">
-        {% if app.user %}
-        {% else %}
-            <h2>Vous n'êtes pas connecté</h2>
-        {% endif %}
-        {% block body %}{% endblock %}
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    {% if not app.user %}
+                        <div class="d-inline-block w-100">
+                            <div class="alert alert-warning mx-auto" role="alert">
+                                <p class="text-center mb-4 fs-2">Vous n'êtes pas connecté</p>
+                                <p class="text-center">Veuillez vous connecter pour accéder aux liens et à votre compte.</p>
+                            </div>
+                        </div>
+                    {% endif %}
+        
+                    {% block body %}{% endblock %}
+                </div>
+            </div>
         </div>
         {% block javascripts %}
             <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>

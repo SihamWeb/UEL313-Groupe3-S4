@@ -46,4 +46,27 @@ button#btn-submit {
 .nav-title {
     text-transform: uppercase;
     color: #4e4e4e;
+    font-style: italic;
 }
+
+.btn.btn-block.btn-signup {
+    background-color: #4e4e4e;
+    color: #ffffff;
+}
+
+.btn.btn-block.btn-signup:hover {
+    background-color: #e4802c;
+}
+
+.btn.btn-outline.btn-login {
+    border: 1px solid #807a7a;
+}
+
+.btn.btn-outline.btn-login:hover {
+    border: 1px solid transparent;
+}
+
+h1 {
+    text-transform: uppercase;
+}
+
