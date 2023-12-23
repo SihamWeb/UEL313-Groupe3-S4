@@ -5,10 +5,13 @@
 {% block body %}
 
     <h1> Liste des liens </h1>
+
+
         <div class="row">
         {% for lien in pagination %}
         
             <div class="card miniature col-4 col-sm-3 col-xl-2" >
+
                 <a href="{{ path('app_lien_show', {'id': lien.id}) }}"><img class='miniature' src="{{ lien.lienImage }}">
                 <div class='container'> <p> {{lien.lienTitre}} </p></div></a>
             </div>
