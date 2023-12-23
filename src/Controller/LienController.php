@@ -83,6 +83,16 @@ class LienController extends AbstractController
     public function delete(Request $request, Lien $lien, EntityManagerInterface $entityManager): Response
     {
         if ($this->isCsrfTokenValid('delete'.$lien->getId(), $request->request->get('_token'))) {
+            $tags = $lien->getTagId();
+
+            $tags->removeElement($lien);
+
+            foreach ($tags as $tag) {
+                $tag->removeLien($lien);
+            }
+
+            $entityManager->flush();
+
             $entityManager->remove($lien);
             $entityManager->flush();
         }
