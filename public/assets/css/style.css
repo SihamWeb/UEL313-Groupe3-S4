@@ -49,6 +49,14 @@ a {
     text-decoration: none;
 }
 
+.miniature a {
+    color: #e4802c;
+}
+
+.miniature a:hover {
+    color: #4e4e4e;
+}
+
 a#navbarDropdown {
     font-weight: 600;
     text-transform: uppercase;
