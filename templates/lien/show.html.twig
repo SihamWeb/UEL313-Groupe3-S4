@@ -27,12 +27,25 @@
                 <th>Lien_image</th>
                 <td>{{ lien.lienImage }}</td>
             </tr>
+            <tr>
+                <th>Tag(s)</th>
+                <td>
+                    {% if lien.tagId is not empty %}
+                        {% for tag in lien.tagId %}
+                            {{ tag.tagName }}
+                            {% if not loop.last %}, {% endif %}
+                        {% endfor %}
+                    {% else %}
+                        No tags
+                    {% endif %}
+                </td>
+            </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('app_lien_index') }}">back to list</a>
+    <a href="{{ path('app_lien_index') }}">Back to list</a>
 
-    <a href="{{ path('app_lien_edit', {'id': lien.id}) }}">edit</a>
+    <a href="{{ path('app_lien_edit', {'id': lien.id}) }}">Edit</a>
 
     {{ include('lien/_delete_form.html.twig') }}
 {% endblock %}
