@@ -25,7 +25,7 @@ class LienController extends AbstractController
     
     $pagination = $paginator->paginate(
     	$lienRepository->paginationQuery(), 
-    	$request->query->get('page', 1), 1
+    	$request->query->get('page', 1), 12
      );
     
         return $this->render('lien/index.html.twig', [
