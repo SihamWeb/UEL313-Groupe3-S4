@@ -160,3 +160,7 @@ h1 {
     display: inline-block;
     margin-right: 10px;
 }
+
+i.fa-solid {
+    color: #e4802c;
+}
