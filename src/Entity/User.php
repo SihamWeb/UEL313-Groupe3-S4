@@ -4,77 +4,112 @@ namespace App\Entity;
 
 use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
-class User
+#[UniqueEntity(fields: ['username'], message: 'Nom d\'utilisateur déjà existant !')]
+class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 50)]
-    private ?string $user_name = null;
+    #[ORM\Column(length: 180, unique: true)]
+    private ?string $username = null;
 
-    #[ORM\Column(length: 88)]
-    private ?string $user_password = null;
+    #[ORM\Column]
+    private array $roles = [];
 
-    #[ORM\Column(length: 23)]
-    private ?string $user_salt = null;
-
-    #[ORM\Column(length: 50)]
-    private ?string $user_role = null;
+    /**
+     * @var string The hashed password
+     */
+    #[ORM\Column]
+    private ?string $password = null;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getUserName(): ?string
+    /**
+     * @deprecated since Symfony 5.3, use getUserIdentifier instead
+     */
+    public function getUsername(): string
     {
-        return $this->user_name;
+        return (string) $this->username;
     }
 
-    public function setUserName(string $user_name): static
+    public function setUsername(string $username): static
     {
-        $this->user_name = $user_name;
+        $this->username = $username;
 
         return $this;
     }
 
-    public function getUserPassword(): ?string
+    /**
+     * A visual identifier that represents this user.
+     *
+     * @see UserInterface
+     */
+    public function getUserIdentifier(): string
     {
-        return $this->user_password;
+        return (string) $this->username;
     }
 
-    public function setUserPassword(string $user_password): static
+    /**
+     * @see UserInterface
+     */
+    public function getRoles(): array
     {
-        $this->user_password = $user_password;
+        $roles = $this->roles;
+        // guarantee every user at least has ROLE_USER
+        $roles[] = 'ROLE_USER';
+
+        return array_unique($roles);
+    }
+
+    public function setRoles(array $roles): static
+    {
+        $this->roles = $roles;
 
         return $this;
     }
 
-    public function getUserSalt(): ?string
+    /**
+     * @see PasswordAuthenticatedUserInterface
+     */
+    public function getPassword(): string
     {
-        return $this->user_salt;
+        return $this->password;
     }
 
-    public function setUserSalt(string $user_salt): static
+    public function setPassword(string $password): static
     {
-        $this->user_salt = $user_salt;
+        $this->password = $password;
 
         return $this;
     }
 
-    public function getUserRole(): ?string
+    /**
+     * Returning a salt is only needed, if you are not using a modern
+     * hashing algorithm (e.g. bcrypt or sodium) in your security.yaml.
+     *
+     * @see UserInterface
+     */
+    public function getSalt(): ?string
     {
-        return $this->user_role;
+        return null;
     }
 
-    public function setUserRole(string $user_role): static
+    /**
+     * @see UserInterface
+     */
+    public function eraseCredentials(): void
     {
-        $this->user_role = $user_role;
-
-        return $this;
+        // If you store any temporary, sensitive data on the user, clear it here
+        // $this->plainPassword = null;
     }
 }
