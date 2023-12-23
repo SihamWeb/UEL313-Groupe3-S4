@@ -89,6 +89,110 @@ class LienFixtures extends Fixture
         $lien -> setLienImage("https://cnes.fr/sites/default/files/drupal/201707/image/is_logo_2017_logo_carre_blanc_sur_bleu_transparent.png");
         $manager -> persist($lien);
 
+
+        $lien = new Lien();
+        $lien -> setLienUrl("https://www.legifrance.gouv.fr/");
+        $lien -> setLienTitre("Legifrance");
+        $lien -> setLienDesc("Légifrance est le site web officiel du gouvernement français pour la diffusion des textes législatifs et réglementaires et des décisions de justice des cours suprêmes et d'appel de droit français");
+        $lien -> setLienImage("");
+        $manager -> persist($lien);
+
+	    
+        $lien = new Lien();
+        $lien -> setLienUrl("https://www.reddit.com/");
+        $lien -> setLienTitre("Reddit");
+        $lien -> setLienDesc("Reddit est un site web communautaire américain de discussion et d’actualités sociales. Les liens les plus appréciés du moment se trouvent affichés en page d’accueil par le vote des utilisateurs. Fondé en 2005, Reddit contient alors surtout du contenu sur la programmation et la science.");
+        $lien -> setLienImage("");
+        $manager -> persist($lien);
+
+	    
+        $lien = new Lien();
+        $lien -> setLienUrl("https://www.lemonde.fr/");
+        $lien -> setLienTitre("Le Monde");
+        $lien -> setLienDesc("Le Monde est un quotidien français de l'après-midi. C'est la principale publication du groupe Le Monde et a fait état d'un tirage moyen de 479 243 exemplaires par numéro en 2022, dont environ 40 000 ont été vendus à l'étranger.");
+        $lien -> setLienImage("");
+        $manager -> persist($lien);
+
+	    
+        $lien = new Lien();
+        $lien -> setLienUrl("https://discord.com/");
+        $lien -> setLienTitre("Discord");
+        $lien -> setLienDesc("Discord est un logiciel propriétaire gratuit de VoIP et de messagerie instantanée.");
+        $lien -> setLienImage("");
+        $manager -> persist($lien);
+
+	    
+        $lien = new Lien();
+        $lien -> setLienUrl("https://www.bing.com/");
+        $lien -> setLienTitre("Bing");
+        $lien -> setLienDesc("Microsoft Bing, est un moteur de recherche élaboré par la société Microsoft.");
+        $lien -> setLienImage("");
+        $manager -> persist($lien);
+
+	    
+        $lien = new Lien();
+        $lien -> setLienUrl("https://www.deepl.com/translator");
+        $lien -> setLienTitre("Deepl");
+        $lien -> setLienDesc("DeepL est un service de traduction automatique en ligne de la société DeepL GmbH, lancé le 28 août 2017 par l'équipe de Linguee.");
+        $lien -> setLienImage("");
+        $manager -> persist($lien);
+
+	$lien = new Lien();
+        $lien -> setLienUrl("https://fr.wikipedia.org");
+        $lien -> setLienTitre("Wikipédia");
+        $lien -> setLienDesc("Un projet d’encyclopédie collective en ligne, universelle, multilingue et fonctionnant sur le principe du wiki.");
+        $lien -> setLienImage("");
+        $manager -> persist($lien);
+
+	$lien = new Lien();
+        $lien -> setLienUrl("https://www.onisep.fr");
+        $lien -> setLienTitre("Onisep");
+        $lien -> setLienDesc("Onisep produit et diffuse toute l'information sur les formations et les métiers.");
+        $lien -> setLienImage("");
+        $manager -> persist($lien);
+
+	$lien = new Lien();
+        $lien -> setLienUrl("https://www.ldlc.com");
+        $lien -> setLienTitre("LDLC");
+        $lien -> setLienDesc("N°1 du high-tech et du matériel informatique, Élu Service Client de l'Année.");
+        $lien -> setLienImage("");
+        $manager -> persist($lien);
+
+	    	$lien = new Lien();
+        $lien -> setLienUrl("https://www.rueducommerce.fr");
+        $lien -> setLienTitre("Rue du commerce");
+        $lien -> setLienDesc("Une entreprise française de grande distribution, acteur du secteur du commerce en ligne en France.");
+        $lien -> setLienImage("");
+        $manager -> persist($lien);
+
+	    	$lien = new Lien();
+        $lien -> setLienUrl("https://wordpress.com/fr/");
+        $lien -> setLienTitre("Wordpress");
+        $lien -> setLienDesc("Créez et développez un site internet avec WordPress.");
+        $lien -> setLienImage("");
+        $manager -> persist($lien);
+
+	    	$lien = new Lien();
+        $lien -> setLienUrl("https://www.php.net/manual/fr/index.php");
+        $lien -> setLienTitre("Support PHP");
+        $lien -> setLienDesc("Aide et assistance pour PHP en ligne");
+        $lien -> setLienImage("");
+        $manager -> persist($lien);
+
+	    	$lien = new Lien();
+        $lien -> setLienUrl("https://www.https://validator.w3.org/.net/manual/fr/index.php");
+        $lien -> setLienTitre("Validator w3");
+        $lien -> setLienDesc("Le Markup Validation Service est un validateur du World Wide Web Consortium qui permet aux utilisateurs Internet de vérifier les documents HTML et XHTML pré-HTML5 pour un balisage bien formé par rapport à une définition de type de document.");
+        $lien -> setLienImage("");
+        $manager -> persist($lien);
+
+	    	$lien = new Lien();
+        $lien -> setLienUrl("https://www.postman.com/");
+        $lien -> setLienTitre("Postman");
+        $lien -> setLienDesc("Postman est une application permettant de tester des API.");
+        $lien -> setLienImage("");
+        $manager -> persist($lien);
+    
         $manager->flush();
     }
 }
