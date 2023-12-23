@@ -3,17 +3,40 @@
 {% block title %}Modifier "{{ app.user.userIdentifier }}"{% endblock %}
 
 {% block body %}
-    <h1>Modifier "{{ app.user.userIdentifier }}"</h1>
+<div class="container">
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-6">
+        <h1 class="mb-4 font-weight-normal text-center">Modifier "{{ app.user.userIdentifier }}"</h1>
 
-    {% for flashMessage in app.flashes('success') %}
-        {{ flashMessage }}
-    {% endfor %}
+        {% for flashMessage in app.flashes('success') %}
+            <div class="alert alert-success" role="alert">
+                {{ flashMessage }}
+            </div>
+        {% endfor %}
+        {% for flashMessage in app.flashes('error') %}
+            <div class="alert alert-danger" role="alert">
+                {{ flashMessage }}
+            </div>
+        {% endfor %}
 
-    {% set successMessages = app.session.flashbag.get('success') %}
+        {% set successMessages = app.session.flashbag.get('success') %}
 
-    {{ form_start(usernameUpdateForm) }}
-        {{ form_row(usernameUpdateForm.newUsername) }}
-        {{ form_row(usernameUpdateForm.confirmNewUsername) }}
-        {{ form_row(usernameUpdateForm.save) }}
-    {{ form_end(usernameUpdateForm) }}
+        {{ form_start(usernameUpdateForm, {'attr': {'class': 'needs-validation'}}) }}
+            <div class="mb-3">
+                {{ form_row(usernameUpdateForm.newUsername, {'attr': {'class': 'form-control', 'placeholder': 'Choisissez un autre nom d\'utilisateur...'}}) }}
+            </div>
+            <div class="mb-4">
+                {{ form_row(usernameUpdateForm.confirmNewUsername, {'attr': {'class': 'form-control', 'placeholder': 'Identique à la saisie précédente...'}}) }}
+            </div>
+            <div class="d-flex justify-content-center">
+                {{ form_row(usernameUpdateForm.save, {'attr': {'class': 'btn btn-block btn-signup me-3'}}) }}
+                <a href="{{ path('app_account') }}" class="btn btn-outline btn-login">Mon compte</a>
+            </div>
+        {{ form_end(usernameUpdateForm) }}
+        </div>
+    </div>
+</div>
+
+                
+            
 {% endblock %}
