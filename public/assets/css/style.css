@@ -155,3 +155,8 @@ h1 {
     line-height: 1.5;
     border-radius: 0.2rem;
 }
+
+.tag-checkbox {
+    display: inline-block;
+    margin-right: 10px;
+}

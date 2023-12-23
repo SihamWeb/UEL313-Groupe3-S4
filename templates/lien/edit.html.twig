@@ -1,13 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Lien{% endblock %}
+{% block title %}Modifier {{lien.lienTitre}}{% endblock %}
 
 {% block body %}
-    <h1>Edit Lien</h1>
+<div class="container">
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-6">
+        <h1 class="font-weight-normal text-center mb-4">Modifier le lien n°{{lien.id}}</h1>
 
-    {{ include('lien/_form.html.twig', {'button_label': 'Update'}) }}
+        {{ include('lien/_form.html.twig', {'button_label': 'Modifier'}) }}
 
-    <a href="{{ path('app_lien_index') }}">back to list</a>
-
-    {{ include('lien/_delete_form.html.twig') }}
+        <div class="d-flex justify-content-center mt-4">
+            <a href="{{ path('app_lien_index') }}" class="btn btn-outline btn-login me-3">Retourner à la liste</a>
+            {{ include('lien/_delete_form.html.twig') }}
+        </div>
 {% endblock %}
