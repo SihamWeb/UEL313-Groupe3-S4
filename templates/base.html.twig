@@ -88,6 +88,12 @@
                                 <p class="text-center">Veuillez vous connecter pour accéder aux liens et à votre compte.</p>
                             </div>
                         </div>
+                        {% if app.request.attributes.get('_route') not in ['app_login', 'app_register'] %}
+                            <div class="d-flex justify-content-center mt-4">
+                                <a href="{{ path('app_login') }}" class="btn btn-block btn-signup me-3">Se connecter</a>
+                            </div>
+                        {% endif %}
+
                     {% endif %}
         
                     {% block body %}{% endblock %}
