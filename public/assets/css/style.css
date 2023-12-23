@@ -73,5 +73,50 @@ button#btn-submit {
 
 h1 {
     text-transform: uppercase;
+    font-size: xx-large;
 }
 
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #4e4e4e;
+}
+
+.table th,
+.table td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.table tbody + tbody {
+    border-top: 2px solid #dee2e6;
+}
+
+.btn-action {
+    border: 1px solid #807a7a;
+}
+
+.btn-action:hover {
+    border: 1px solid transparent;
+}
+
+.btn-action, .btn-action:hover {
+    color: #4e4e4e;
+}
+
+.btn-action:not(:disabled):not(.disabled) {
+    cursor: pointer;
+}
+
+.btn-sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    border-radius: 0.2rem;
+}
