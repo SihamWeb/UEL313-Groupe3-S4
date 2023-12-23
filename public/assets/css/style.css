@@ -4,6 +4,34 @@
     #3a3a3a (gris clair)
 */
 
+body {
+
+	padding:10% ;
+  background-color: #E6E6FA;
+}
+
+.miniature {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  width: 100%;
+  
+  }
+  
+div.miniature {
+  margin : 20px ;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 25px;
+  border-radius: 10px;
+}
+
+div.card-group {
+  text-align: center;
+  padding: 20px 0px 20px 0px;
+  margin : 0 -20px 0 -20px ;
+}
+
 .important {
     color: #e4802c;
 }

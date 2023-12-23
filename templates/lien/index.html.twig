@@ -3,39 +3,28 @@
 {% block title %}Lien index{% endblock %}
 
 {% block body %}
-    <h1>Lien index</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Lien_url</th>
-                <th>Lien_titre</th>
-                <th>Lien_desc</th>
-                <th>Lien_image</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
+    <h1> Liste des liens </h1>
+
+
+        <div class="row">
         {% for lien in pagination %}
-            <tr>
-                <td>{{ lien.id }}</td>
-                <td>{{ lien.lienUrl }}</td>
-                <td>{{ lien.lienTitre }}</td>
-                <td>{{ lien.lienDesc }}</td>
-                <td>{{ lien.lienImage }}</td>
-                <td>
-                    <a href="{{ path('app_lien_show', {'id': lien.id}) }}">show</a>
-                    <a href="{{ path('app_lien_edit', {'id': lien.id}) }}">edit</a>
-                </td>
-            </tr>
+        
+            <div class="card miniature col-4 col-sm-3 col-xl-2" >
+
+                <a href="{{ path('app_lien_show', {'id': lien.id}) }}"><img class='miniature' src="{{ lien.lienImage }}">
+                <div class='container'> <p> {{lien.lienTitre}} </p></div></a>
+            </div>
         {% else %}
             <tr>
                 <td colspan="6">no records found</td>
             </tr>
+            
         {% endfor %}
-        </tbody>
-    </table>
+
+        </div>
+
+
     {{ knp_pagination_render(pagination) }}
 
     <a href="{{ path('app_lien_new') }}">Create new</a>
