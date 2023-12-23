@@ -1,7 +1,10 @@
+/* 
+    #e4802c (orange)
+    #4e4e4e (gris foncé)
+    #3a3a3a (gris clair)
+*/
 
 body {
-
-	padding:10% ;
   background-color: #E6E6FA;
 }
 
@@ -9,17 +12,15 @@ body {
   border: 1px solid #ddd;
   border-radius: 4px;
   padding: 10px;
-  width: 100%;
-  
+  width: 100% ;
   }
   
-  div.miniature {
-    margin : 20px ;
+div.miniature {
+  margin : 20px ;
   background-color: white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   margin-bottom: 25px;
-    border-radius: 10px;
-
+  border-radius: 10px;
 }
 
 div.card-group {
@@ -28,4 +29,119 @@ div.card-group {
   margin : 0 -20px 0 -20px ;
 }
 
+.important {
+    color: #e4802c;
+}
 
+.custom-font-color {
+    color: #4e4e4e;
+}
+
+img#logo {
+    height: 75px;
+}
+
+nav {
+    background-color: #e4802c;
+}
+
+a {
+    text-decoration: none;
+}
+
+a#navbarDropdown {
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #4e4e4e;
+}
+
+button#btn-submit {
+    background-color: #4e4e4e;
+    color: #ffffff;
+}
+
+.form-search, ul.navbar-nav {
+    width: 100%;
+}
+
+.menu {
+    flex: 0 0 40%;
+}
+
+.menu.search{
+    flex: 0 0 20%;
+}
+
+.nav-title {
+    text-transform: uppercase;
+    color: #ffffff;
+    font-style: italic;
+}
+
+.btn.btn-block.btn-signup {
+    background-color: #4e4e4e;
+    color: #ffffff;
+}
+
+.btn.btn-block.btn-signup:hover {
+    background-color: #e4802c;
+}
+
+.btn.btn-outline.btn-login {
+    border: 1px solid #807a7a;
+}
+
+.btn.btn-outline.btn-login:hover {
+    border: 1px solid transparent;
+    color: #e4802c;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-size: xx-large;
+}
+
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #4e4e4e;
+}
+
+.table th,
+.table td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.table tbody + tbody {
+    border-top: 2px solid #dee2e6;
+}
+
+.btn-action {
+    border: 1px solid #807a7a;
+}
+
+.btn-action:hover {
+    border: 1px solid transparent;
+}
+
+.btn-action, .btn-action:hover {
+    color: #4e4e4e;
+}
+
+.btn-action:not(:disabled):not(.disabled) {
+    cursor: pointer;
+}
+
+.btn-sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    border-radius: 0.2rem;
+}
