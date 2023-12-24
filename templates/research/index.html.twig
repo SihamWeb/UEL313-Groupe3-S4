@@ -14,6 +14,7 @@
 				<th>Titre</th>
 				<th>Description</th>
 				<th>Tag(s)</th>
+				<th>Action</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -30,6 +31,9 @@
 					{% else %}
 						Aucun tag
 					{% endif %}
+				</td>
+				<td>
+					<a href="{{ path('app_lien_show', {'id': lien.id}) }}"><i class="fa-solid fa-eye me-3"></i></a>
 				</td>
 			</tr>
 		{% else %}
