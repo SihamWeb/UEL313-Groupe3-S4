@@ -1,26 +1,29 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Tag{% endblock %}
+{% block title %}{{ tag.tagName }}{% endblock %}
 
 {% block body %}
-    <h1>Tag</h1>
+    {% if app.user %}
+        <div class="container">
+            <div class="row justify-content-center mt-5">
+                <h1 class="mb-4 font-weight-normal text-center">Tag n°{{tag.id}}</h1>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ tag.id }}</td>
-            </tr>
-            <tr>
-                <th>Tag_name</th>
-                <td>{{ tag.tagName }}</td>
-            </tr>
-        </tbody>
-    </table>
+            <table class="table table-bordered table-striped table-hover">
+                <tbody>
+                    <tr>
+                        <th scope="row">Tag_name</th>
+                        <td>{{ tag.tagName }}</td>
+                    </tr>
+                </tbody>
+            </table>
 
-    <a href="{{ path('app_tag_index') }}">back to list</a>
-
-    <a href="{{ path('app_tag_edit', {'id': tag.id}) }}">edit</a>
-
-    {{ include('tag/_delete_form.html.twig') }}
+            <div class="d-flex justify-content-center mt-4">
+                <a href="{{ path('app_tag_index') }}" class="btn btn-block btn-signup me-3">Retourner à la liste</a>
+                <a href="{{ path('app_tag_edit', {'id': tag.id}) }}" class="btn btn-outline btn-login">Modifier</a>
+            </div>
+            <div class="d-flex justify-content-center mt-4">
+                {{ include('tag/_delete_form.html.twig') }}
+            </div>
+        </div>
+    {% endif %}
 {% endblock %}
