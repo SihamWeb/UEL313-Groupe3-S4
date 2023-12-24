@@ -44,12 +44,12 @@ Nous avons voulu permettre l'inscription, la connexion et la déconexion aux uti
 de changer son mot de passe ainsi que son nom d'utilisateur.
 
 </br>
-<img src="" alt="gestion-utilisateur" border="0" witdh="180px"></br>
+<img src="https://github.com/SihamWeb/UEL313-Groupe3-S4/assets/90715354/044e0d0f-9bde-495c-9045-86d253bdae57" alt="gestion-utilisateur" border="0" witdh="180px"></br>
 </br>
 <ins>Extrait du code :</ins></br>
 </br>
-<img src="" alt="gestion-utilisateur-code" border="0" height="250px">
-<img src="" alt="gestion-utilisateur-code3" border="0" height="250px"></br>
+<img src="https://github.com/SihamWeb/UEL313-Groupe3-S4/assets/90715354/c5b1414e-f94d-44fa-81b3-569f1961ef7f" alt="gestion-utilisateur-code" border="0" height="250px">
+<img src="https://github.com/SihamWeb/UEL313-Groupe3-S4/assets/90715354/776e5c82-cd12-4918-a8f2-da078004aad6" alt="gestion-utilisateur-code3" border="0" height="250px"></br>
 </br>
 
 ### 🔢 Barre de recherche
@@ -57,12 +57,12 @@ Afin de faciliter nos recherches, rien de mieux qu'une barre de recherche que no
 aux liens qui nous intéressent.
 
 </br>
-<img src="" alt="barre-recherche" border="0" witdh="180px"></br>
+<img src="https://github.com/SihamWeb/UEL313-Groupe3-S4/assets/90715354/d36af4e7-138b-4f8a-837e-efc689f518f7" alt="barre-recherche" border="0" witdh="180px"></br>
 </br>
 <ins>Extrait du code :</ins></br>
 </br>
-<img src="" alt="barre-recherche-code" border="0" height="250px">
-<img src="" alt="barre-recherche-code" border="0" height="250px"></br>
+<img src="https://github.com/SihamWeb/UEL313-Groupe3-S4/assets/90715354/112db322-ba33-4a95-8e31-031ff41cefc1" alt="barre-recherche-code" border="0" height="250px">
+<img src="https://github.com/SihamWeb/UEL313-Groupe3-S4/assets/90715354/71d56971-97bb-4680-b0e1-049c5b5aed32" alt="barre-recherche-code" border="0" height="250px"></br>
 </br>
 
 ### 🧑‍🎨 Visuel de l'application
