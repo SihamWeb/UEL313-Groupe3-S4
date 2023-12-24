@@ -73,6 +73,6 @@ Il s'agit donc d'enrichir le rendu visuel de Watson. Nous sommes libres de compl
 `• changement de couleurs`<br>
 `• polices`<br>
 `• agencements d'éléments`<br>
-`• ajout de fonctionnalités annexes (fenêtres modales, accordéons, etc...)`<br>
+`• ajout de fonctionnalités <br>
 </br>
 </br><img src="https://github.com/SihamWeb/UEL313-Groupe3-S4/assets/89517413/36c41284-622c-4241-843c-5e1ffe8403a5" alt="design" border="0" witdh="300px">
