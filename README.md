@@ -52,6 +52,19 @@ de changer son mot de passe ainsi que son nom d'utilisateur.
 <img src="" alt="gestion-utilisateur-code3" border="0" height="250px"></br>
 </br>
 
+### 🔢 Barre de recherche
+Afin de faciliter nos recherches, rien de mieux qu'une barre de recherche que nous avons voulu implémenter afin de faciliter l'expérience utilisateur en accédant directement 
+aux liens qui nous intéressent.
+
+</br>
+<img src="" alt="barre-recherche" border="0" witdh="180px"></br>
+</br>
+<ins>Extrait du code :</ins></br>
+</br>
+<img src="" alt="barre-recherche-code" border="0" height="250px">
+<img src="" alt="barre-recherche-code" border="0" height="250px"></br>
+</br>
+
 ### 🧑‍🎨 Visuel de l'application
 Le rendu visuel de Watson se base sur l'utilisation de différentes librairies côté client, telle que Bootstrap (CSS & JS) ou encore jQuery.
 Il s'agit donc d'enrichir le rendu visuel de Watson. Nous sommes libres de complexifier l'interface selon nos aisances et vos envies. À nous d'être imaginatif et cohérent !</br>
