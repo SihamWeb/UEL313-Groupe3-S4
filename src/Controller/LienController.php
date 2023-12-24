@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Repository\LienRepository;
+use App\Repository\TagRepository;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -13,7 +14,6 @@ use App\Entity\Lien;
 use App\Form\Lien1Type;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
-
 
 
 #[Route('/lien')]
@@ -101,4 +101,22 @@ class LienController extends AbstractController
 
         return $this->redirectToRoute('app_lien_index', [], Response::HTTP_SEE_OTHER);
     }
+
+    #[Route('/tag/{tagId}', name: 'app_lien_by_tag', methods: ['GET'])]
+    public function showByTag(int $tagId, LienRepository $lienRepository, TagRepository $tagRepository): Response
+    {
+        $tag = $tagRepository->find($tagId);
+
+        if (!$tag) {
+            throw $this->createNotFoundException('Aucun tag trouvé');
+        }
+
+        $liens = $lienRepository->findByTag($tag);
+
+        return $this->render('lien/by_tag/by_tag.html.twig', [
+            'tag' => $tag,
+            'liens' => $liens,
+        ]);
+    }
+
 }

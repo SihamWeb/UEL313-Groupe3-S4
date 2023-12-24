@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\Lien;
+use App\Entity\Tag;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 use Doctrine\ORM\Tools\Pagination\Paginator;
@@ -29,6 +30,17 @@ class LienRepository extends ServiceEntityRepository
             ->orderBy('l.id', 'ASC')
             ->getQuery()
         ;
+    }
+
+    public function findByTag(Tag $tag): array
+    {
+        return $this->createQueryBuilder('l')
+            ->join('l.tag_id', 'lt')
+            ->where('lt.id = :tagId')
+            ->setParameter('tagId', $tag->getId())
+            ->getQuery()
+            ->getResult();
+
     }
 
 //    public function findOneBySomeField($value): ?Lien
