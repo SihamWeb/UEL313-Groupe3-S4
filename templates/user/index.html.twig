@@ -3,40 +3,44 @@
 {% block title %}Mon compte, {{ app.user.userIdentifier | capitalize }}{% endblock %}
 
 {% block body %}
-    <h1>Bienvenue, {{ app.user.userIdentifier | capitalize }}</h1>
+        <div class="container">
+            <div class="row justify-content-center mt-5">
+                <h1 class="mb-4 font-weight-normal text-center">Votre profil, {{ app.user.userIdentifier | capitalize }}</h1>
 
-    <h2>Votre profil, {{ app.user.userIdentifier | capitalize }}</h2>
-    
-    <table>
-        <thead>
-            <tr>
-                <th scope="col">Paramètres</th>
-                <th scope="col">Valeur</th>
-                <th scope="col">Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th scope="col">Username</th>
-                <td>{{ app.user.userIdentifier }}</td>
-                <td>
-                    <a href="{{ path('app_username_update') }}">Modifier</a>
-                </td>
-            </tr>
-            <tr>
-                <th scope="col">Mot de passe</th>
-                <td>*****</td>
-                <td>
-                    <a href="{{ path('app_password_update') }}">Modifier</a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+                <table class="table table-bordered table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Paramètres</th>
+                            <th scope="col">Valeur</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Nom d'utilisateur</th>
+                            <td>{{ app.user.userIdentifier }}</td>
+                            <td>
+                                <a href="{{ path('app_username_update') }}" class="btn btn-sm btn-outline btn-action"><i class="fa-solid fa-pen"></i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Mot de passe</th>
+                            <td>*****</td>
+                            <td>
+                                <a href="{{ path('app_password_update') }}" class="btn btn-sm btn-outline btn-action"><i class="fa-solid fa-pen"></i></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
 
     <form method="post" action="{{ path('app_user_delete', {'id': app.user.id}) }}" onsubmit="return confirm('Etes-vous certain de supprimer votre compte ?');">
         <input type="hidden" name="_method" value="DELETE">
         <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ app.user.id) }}">
-        <button>Supprimer mon compte</button>
+        <div class="d-flex justify-content-center mt-4">
+            <button class="btn btn-danger">Supprimer mon compte</button>
+        </div>
     </form>
     
 {% endblock %}

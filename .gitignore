@@ -30,7 +30,6 @@
 /bin/*
 !bin/console
 !bin/symfony_requirements
-/vendor/
 
 # Assets and user uploads
 /web/bundles/
@@ -60,7 +59,6 @@
 /config/secrets/prod/prod.decrypt.private.php
 /public/bundles/
 /var/
-/vendor/
 ###< symfony/framework-bundle ###
 
 ###> symfony/phpunit-bridge ###

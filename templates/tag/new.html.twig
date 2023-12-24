@@ -1,11 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Tag{% endblock %}
+{% block title %}Créer un nouveau tag{% endblock %}
 
 {% block body %}
-    <h1>Create new Tag</h1>
+    {% if app.user %}
+        <div class="container">
+            <div class="row justify-content-center mt-5">
+                <div class="col-md-6">
+                    <h1 class="font-weight-normal text-center mb-4">Créer un nouveau tag</h1>
 
-    {{ include('tag/_form.html.twig') }}
-
-    <a href="{{ path('app_tag_index') }}">back to list</a>
+                    {{ include('tag/_form.html.twig', {'button_label': 'Créer'}) }}
+                </div>
+            </div>
+        </div>
+    {% endif %}
 {% endblock %}

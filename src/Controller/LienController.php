@@ -26,7 +26,7 @@ class LienController extends AbstractController
     $pagination = $paginator->paginate(
     	$lienRepository->paginationQuery(), 
 
-    	$request->query->get('page', 1), 12
+    	$request->query->get('page', 1), 6
 
      );
     

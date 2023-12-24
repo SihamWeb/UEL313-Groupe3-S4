@@ -1,35 +1,42 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Tag index{% endblock %}
+{% block title %}Liste des tags{% endblock %}
 
 {% block body %}
-    <h1>Tag index</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Tag_name</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for tag in tags %}
-            <tr>
-                <td>{{ tag.id }}</td>
-                <td>{{ tag.tagName }}</td>
-                <td>
-                    <a href="{{ path('app_tag_show', {'id': tag.id}) }}">show</a>
-                    <a href="{{ path('app_tag_edit', {'id': tag.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="3">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    {% if app.user %}
+    <div class="container">
+        <div class="row justify-content-center mt-5">
+        <h1 class="font-weight-normal text-center mb-4">Liste des tags</h1>
 
-    <a href="{{ path('app_tag_new') }}">Create new</a>
+        <table class="table table-bordered table-striped table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Nom du tag</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for tag in tags %}
+                <tr>
+                    <td>{{ tag.id }}</td>
+                    <td>{{ tag.tagName }}</td>
+                    <td>
+                        <a href="{{ path('app_tag_show', {'id': tag.id}) }}"><i class="fa-solid fa-eye me-3"></i></a>
+                        <a href="{{ path('app_tag_edit', {'id': tag.id}) }}"><i class="fa-solid fa-pen"></i></a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="3">Aucun tag trouvé et disponible</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    <div class="d-flex justify-content-center mt-4">
+        <a href="{{ path('app_tag_new') }}" class="btn btn-block btn-signup mt-5 mb-5">Créer un nouveau tag</a>
+    </div>
+    
+    {% endif %}
 {% endblock %}

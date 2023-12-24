@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Résultat(s) pour "{{ query }}"{% endblock %}
+
+{% block body %}
+
+    {% if app.user %}
+
+    <h1 class="font-weight-normal text-center mb-4">Résultat(s) pour "{{ query }}"</h1>
+
+    <table class="table table-bordered table-striped table-hover">
+		<thead>
+			<tr>
+				<th>Titre</th>
+				<th>Description</th>
+				<th>Tag(s)</th>
+				<th>Action</th>
+			</tr>
+		</thead>
+		<tbody>
+		{% for lien in liens %}
+			<tr>
+				<td>{{ lien.lienTitre }}</td>
+				<td>{{ lien.lienDesc }}</td>
+				<td>
+					{% if lien.tagId is not empty %}
+						{% for tag in lien.tagId %}
+							{{ tag.tagName }}
+							{% if not loop.last %}, {% endif %}
+						{% endfor %}
+					{% else %}
+						Aucun tag
+					{% endif %}
+				</td>
+				<td>
+					<a href="{{ path('app_lien_show', {'id': lien.id}) }}"><i class="fa-solid fa-eye me-3"></i></a>
+				</td>
+			</tr>
+		{% else %}
+			<tr>
+				<td colspan="4">Aucun lien correspondant</td>
+			</tr>
+		{% endfor %}
+		</tbody>
+	</table>
+
+	<div class="d-flex justify-content-center">
+        <a href="{{ path('app_lien_index') }}" class="btn btn-block btn-signup mt-5 mb-5">Retourner à la liste</a>
+    </div>
+
+    {% endif %}
+{% endblock %}
