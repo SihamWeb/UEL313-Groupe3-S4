@@ -3,13 +3,15 @@
 {% block title %}Créer un nouveau lien{% endblock %}
 
 {% block body %}
-<div class="container">
-    <div class="row justify-content-center mt-5">
-        <div class="col-md-6">
-            <h1 class="font-weight-normal text-center mb-4">Créer un nouveau lien</h1>
-            
-            {{ include('lien/_form.html.twig', {'button_label': 'Créer'}) }}
+    {% if app.user %}
+        <div class="container">
+            <div class="row justify-content-center mt-5">
+                <div class="col-md-6">
+                    <h1 class="font-weight-normal text-center mb-4">Créer un nouveau lien</h1>
+                    
+                    {{ include('lien/_form.html.twig', {'button_label': 'Créer'}) }}
+                </div>
+            </div>
         </div>
-    </div>
-</div>
+    {% endif %}
 {% endblock %}
