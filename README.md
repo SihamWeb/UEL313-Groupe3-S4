@@ -18,7 +18,7 @@ Pour effectuer ce travail, nous sommes partis d'un projet Symfony que nous avons
 
 ### 📜 Répartition des tâches
 `Dylan` : Mise en place de la page de gestion des tags </br>
-`Siham` : Création de la gestion utilisateur et réalisation des modules de recherche dynamique </br>
+`Siham` : Création de la gestion utilisateur, de la barre de recherche et d'enrichissement visuel (CSS, Bootstrap...) </br>
 `Valentine` : Système de pagination et enrichissement visuel de l'application (CSS, JS, Bootstrap...).</br>
 </br>
 
@@ -37,6 +37,19 @@ https://github.com/KnpLabs/KnpPaginatorBundle
 </br>
 <img src="https://github.com/SihamWeb/UEL313-Groupe3-S4/assets/89517413/ae9657ee-78ea-484e-8ed2-490b1048f0d3" alt="pagination-code" border="0" height="250px">
 <img src="https://github.com/SihamWeb/UEL313-Groupe3-S4/assets/89517413/28c7fac6-9c4b-402b-8229-ef7fc2c1b834" alt="pagination-code3" border="0" height="250px"></br>
+</br>
+
+### 🔢 Gestion utilisateur
+Nous avons voulu permettre l'inscription, la connexion et la déconexion aux utilisateurs afin de pouvoir accéder aux liens disponibles. Il est également possible 
+de changer son mot de passe ainsi que son nom d'utilisateur.
+
+</br>
+<img src="" alt="gestion-utilisateur" border="0" witdh="180px"></br>
+</br>
+<ins>Extrait du code :</ins></br>
+</br>
+<img src="" alt="gestion-utilisateur-code" border="0" height="250px">
+<img src="" alt="gestion-utilisateur-code3" border="0" height="250px"></br>
 </br>
 
 ### 🧑‍🎨 Visuel de l'application
