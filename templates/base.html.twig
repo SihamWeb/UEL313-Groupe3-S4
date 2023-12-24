@@ -13,7 +13,9 @@
     <body class="custom-font-color">
         <nav class="navbar navbar-expand-lg pb-3 pt-3 mb-5">
             <div class="container-fluid">
-                <img src="{{ asset('assets/images/logo.png') }}" alt="Logo" id="logo" class="me-4">
+                <a href="{{ path('app_lien_index') }}">
+                    <img src="{{ asset('assets/images/logo.png') }}" alt="Logo" id="logo" class="me-4">
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -71,10 +73,10 @@
                         <p class="fs-1 nav-title">Watson by DVS</p>
                     </div>
                     <div class="menu search">
-                        <form class="d-flex form-search" action="" method="post">
-						<input class="form-control me-sm-2" type="search" name="Keywords" placeholder="Rechercher">
-						<button class="btn my-2 my-sm-0 ms-0" type="submit" id="btn-submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-					</form>
+                        <form class="d-flex form-search" action="{{ path('app_research') }}" method="post">
+                            <input class="form-control me-sm-2" type="search" name="Keywords" placeholder="Rechercher">
+                            <button class="btn my-2 my-sm-0 ms-0" type="submit" id="btn-submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        </form>
                     </div>
                 </div>
             </div>
