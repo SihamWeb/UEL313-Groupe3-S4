@@ -27,8 +27,9 @@ Pour effectuer ce travail, nous sommes partis d'un projet Symfony que nous avons
 
 
 ### 🔢 Système de pagination
-La pagination étant inexistante, nous devions la créer. Nous avons choisi d'utiliser les templates knp disponibles 
+La pagination étant inexistante, le choix s'est parté sur les templates knp disponibles sur Github : 
 https://github.com/KnpLabs/KnpPaginatorBundle
+Le template privilégié est finalement celui nommé twitter_bootstrap_v3_pagination, avec une adaptation front provenant du fichier bootstrap
 
 </br>
 <img src="https://github.com/SihamWeb/UEL313-Groupe3-S4/assets/89517413/4f6a7e81-d83c-40fa-8d78-5cb0eef49e51" alt="pagination" border="0" witdh="180px"></br>
@@ -40,8 +41,7 @@ https://github.com/KnpLabs/KnpPaginatorBundle
 </br>
 
 ### 🔢 Gestion utilisateur
-Nous avons voulu permettre l'inscription, la connexion et la déconexion aux utilisateurs afin de pouvoir accéder aux liens disponibles. Il est également possible 
-de changer son mot de passe ainsi que son nom d'utilisateur.
+Afin de permettre l'inscription, la connexion et la déconexion aux utilisateurs et pouvoir accéder aux liens disponibles, l'application a un espace utilisateur permettant également de changer son mot de passe ainsi que son nom d'utilisateur.
 
 </br>
 <img src="https://github.com/SihamWeb/UEL313-Groupe3-S4/assets/90715354/044e0d0f-9bde-495c-9045-86d253bdae57" alt="gestion-utilisateur" border="0" witdh="180px"></br>
